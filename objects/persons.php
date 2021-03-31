@@ -38,7 +38,6 @@ class Person {
         ";
         // prepare the statement
         $stmt = $this->conn->prepare($query);
-  
         // protect against HTML/JS code injection
         $this->role=htmlspecialchars(strip_tags($this->role));
         $this->fname=htmlspecialchars(strip_tags($this->fname));
@@ -88,9 +87,10 @@ class Person {
         // prepare the statement
 		$stmt = $this->conn->prepare( $query );
 		
+
         // execute the statement (select the records)
 		$stmt->execute();
-	    
+        
 		return $stmt;
 
 	} // end function readAll() 
